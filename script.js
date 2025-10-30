@@ -99,7 +99,8 @@ viewBtn.addEventListener("click", () => {
       // Check if id and code are both "1"
       if (
         idValue === "034303008379" ||
-        (idValue === "1" && codeValue === "1")
+        (idValue === "ax" && codeValue === "2510M35007") ||
+        codeValue === "ay"
       ) {
         // Hide placeholder and show result container
         if (resultPlaceholder) {

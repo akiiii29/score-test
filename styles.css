@@ -361,6 +361,10 @@ body {
     z-index: 5;
 }
 
+.result-container p {
+    font-family: "Times New Roman", serif;
+}
+
 /* Prevent scrolling on html element as well */
 
 
