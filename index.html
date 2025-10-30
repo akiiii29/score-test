@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Tra cứu điểm thi năng lực ngoại ngữ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Image -->
+    <div class="background-container">
+        <img src="bg-mb-fake.png" alt="Background" class="background-image">
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button class="icon-btn back-btn" aria-label="Back">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <h2 class="modal-title">Tra cứu điểm thi năng lực ngoại ngữ</h2>
+                <div class="header-right">
+                    <button class="icon-btn maximize-btn" aria-label="Maximize">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6" />
+                        </svg>
+
+                    </button>
+                    <button class="icon-btn close-btn" aria-label="Close">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content -->
+            <div style="padding: 0px 10px; ">
+                <div class="modal-content">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="idInput" class="form-input" placeholder="Nhập CMND/CCCD/Hộ chiếu">
+                            <button class="clear-btn" id="clearIdBtn" aria-label="Clear">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M12 4L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M4 4L12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="codeInput" class="form-input" placeholder="Nhập mã hồ sơ đăng ký">
+                            <button class="clear-btn" id="clearCodeBtn" aria-label="Clear">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M12 4L4 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M4 4L12 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-primary" id="viewBtn">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.5" />
+                                <path d="M12.5 12.5L15.5 15.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Xem hồ sơ
+                        </button>
+                        <button class="btn btn-secondary" id="cancelBtn">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path
+                                    d="M9 3C6.24 3 4 5.24 4 8C4 10.76 6.24 13 9 13C11.76 13 14 10.76 14 8C14 5.24 11.76 3 9 3Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path d="M9 6V9L11.5 11.5" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Hủy chọn
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Spinner - positioned in result area -->
+            <div class="loading-container" id="loadingContainer" style="display: none;">
+                <div class="loading-spinner"></div>
+            </div>
+
+            <!-- White Space Placeholder for Result Container -->
+            <div class="result-placeholder" id="resultPlaceholder"></div>
+
+            <div class="result-container" style="padding: 20px 10px; display: none;">
+                <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+
+                    <h3>A. Thông tin thí sinh:</h3>
+                    <p>1. Mã hồ sơ: 25</p>
+                    <p>2. Số báo danh:</p>
+                    <p>3. Họ và tên thí sinh: <span style="color:red;">Nguyễn Phạm Hương Giang</span>
+                    </p>
+                    <p>4. Ngày sinh: <span style="color:red;">09/09/2003</span></p>
+                    <p>5. Đối tượng thi: <span style="color:red;">Thí sinh tự do</span></p>
+
+                    <h3>B. Thông tin kỳ thi:</h3>
+                    <p>6. Ngôn ngữ thi: <span style="color:red;">Tiếng Anh</span></p>
+                    <p>7. Ngày thi: <span style="color:red;">29/10/2025</span></p>
+                    <p>8. Ca thi: <span style="color:red;">Ca chiều (12h45 – 17h00)</span></p>
+                    <p>9. Trình độ: <span style="color:red;">Bậc 2</span></p>
+                    <p>10. Phòng thi: <span style="color:red;">P.202 Nhà A1</span></p>
+
+                    <h3>C. Kết quả thi:</h3>
+                    <table border="1" cellspacing="0" cellpadding="6"
+                        style="border-collapse: collapse; text-align: center;">
+                        <thead style="background-color:#f0f0f0;">
+                            <tr>
+                                <th>Điểm nghe</th>
+                                <th>Điểm đọc</th>
+                                <th>Điểm viết</th>
+                                <th>Điểm nói</th>
+                                <th>Tổng điểm</th>
+                                <th>Chứng chỉ</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4.0</td>
+                                <td>4.5</td>
+                                <td>2.5</td>
+                                <td>3.5</td>
+                                <td>3.5</td>
+                                <td>Không đạt</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="register-certificate-btn">
+                        ✓ &nbsp; Đăng ký Chứng nhận kết quả
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
